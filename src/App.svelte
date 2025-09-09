@@ -72,6 +72,7 @@
   export function getRegionColor(regionName) {
     return regionColors[regionName] || "#999";
   }
+
 </script>
 
 <h1>La expansión de la banca española tras la crisis financiera</h1>
@@ -84,7 +85,6 @@
     height: 9px;
     border: 1px solid grey;
     border-radius: 50%;
-    vertical-align: middle;
   "
   ></span> &rarr; ventas)</span>
 </h2>
@@ -112,15 +112,15 @@
           fill={node.operación === "Venta"
             ? "white"
             : getRegionColor(node.region)}
-          stroke={node.operación === "Venta" ? "#cfcfcf" : "#555"}
+          stroke={node.operación === "Venta" ? "#555" : "#555"}
           stroke-width={hoveredBank || hoveredRegion
             ? hoveredBank === node ||
               hoveredRegion === node.region ||
               node.operación === "Venta"
-              ? "1"
+              ? "0.5"
               : "0"
             : node.operación === "Venta"
-              ? "1"
+              ? "0.5"
               : "0"}
           opacity={hoveredBank || hoveredRegion
             ? hoveredBank === node || hoveredRegion === node.region
@@ -143,7 +143,19 @@
             event.stopPropagation();
           }}
         />
-      {/each}
+      {#if node.valor > 2000 && node.adquisicion === "Guaranty" || node.adquisicion === "TSB" || node.valor > 2000 && node.adquisicion === "Garanti"}
+        <text
+          x={node.x}
+          y={node.y}
+          text-anchor="middle"
+          dy=".35em"
+          class="bubble-label"
+          opacity={hovered ? 0 : 1}
+        >
+    {node.adquisicion}
+      </text>
+        {/if}
+  {/each}
     </g>
   </svg>
   {#if hovered}
@@ -184,4 +196,13 @@
       stroke 300ms ease,
       opacity 300ms ease;
   }
+
+  .bubble-label {
+  font-size: 0.8em;
+  fill: #fff;
+  pointer-events: none;
+  user-select: none;
+    white-space: pre-line;   /* respeta saltos de línea */
+  text-anchor: middle;
+}
 </style>

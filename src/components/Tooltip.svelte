@@ -55,7 +55,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 8px;
     border-radius: 4px;
-    max-width: 220px;
     pointer-events: none;
     transition: top 50ms ease, left 50ms ease;
     border: 1px solid #ddd;
@@ -76,8 +75,6 @@
     font-family: 'Lato';
         padding-right: 8px;
         flex-shrink: 1;
-        overflow: hidden;
-        text-overflow: ellipsis;
         white-space: nowrap;
     }
 
