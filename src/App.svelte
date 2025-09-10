@@ -6,6 +6,8 @@
 
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
 
+  
+
   const RADIUS = 5;
   let nodes = [];
   let simulation = forceSimulation();
@@ -75,7 +77,6 @@
 
 </script>
 
-<h1>La expansión de la banca española tras la crisis financiera</h1>
 <h2>
   Compras de firmas extranjeras <span style="color:grey;">(<span
     style="
@@ -202,7 +203,7 @@
   fill: #fff;
   pointer-events: none;
   user-select: none;
-    white-space: pre-line;   /* respeta saltos de línea */
+  white-space: pre-line;
   text-anchor: middle;
 }
 </style>
