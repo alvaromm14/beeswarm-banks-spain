@@ -114,7 +114,16 @@ export default [
     "pais": "Polonia",
     "region": "Europa",
     "año": 2025,
-    "valor": 7000,
+    "valor": 6800,
+  },
+  {
+    "banco": "Santander",
+    "operación": "Venta",
+    "adquisicion": "Santander Puerto Rico",
+    "pais": "Puerto Rico",
+    "region": "Sudamérica",
+    "año": 2020,
+    "valor": 930,
   },
   {
     "banco": "Santander",
